@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Medipohds - Dashboard</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="https://www.medipohds.com/wp-content/uploads/2021/07/favicon-150x150.png">
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="dashboard/template/vendors/feather/feather.css">
+  <link rel="stylesheet" href="dashboard/template/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="dashboard/template/vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="dashboard/template/vendors/typicons/typicons.css">
+  <link rel="stylesheet" href="dashboard/template/vendors/simple-line-icons/css/simple-line-icons.css">
+  <link rel="stylesheet" href="dashboard/template/vendors/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="dashboard/template/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+  <link rel="stylesheet" href="dashboard/template/js/select.dataTables.min.css">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="dashboard/template/css/vertical-layout-light/style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container-scroller"> 
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+        <a href="dashboard.html">
+          <img src="https://www.medipohds.com/wp-content/uploads/2021/07/logo.png" width="160px">
+        </a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-top"> 
+        <ul class="navbar-nav">
+          <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
+            <h1 class="welcome-text">Bienvenido, <span class="text-black fw-bold">Dr. Juan Hernandez</span></h1>
+            <h3 class="welcome-sub-text">Su resumen de actividad esta semana</h3>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          <input type="date" class="form-control w-auto" placeholder="20 de Junio 2024">
+          <li class="nav-item">
+            <form class="search-form" action="#">
+              <i class="icon-search"></i>
+              <input type="search" class="form-control" placeholder="Busca aquí" title="Busca aquí">
+            </form>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link count-indicator" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
+              <i class="icon-mail icon-lg"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="notificationDropdown">
+              <a class="dropdown-item py-3 border-bottom">
+                <p class="mb-0 font-weight-medium float-left">Tienes 4 notificaciones nuevas </p>
+                <span class="badge badge-pill badge-primary float-right">Ver todo</span>
+              </a>
+              <a class="dropdown-item preview-item py-3">
+                <div class="preview-thumbnail">
+                  <i class="mdi mdi-alert m-auto text-primary"></i>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject fw-normal text-dark mb-1">Error de la aplicación</h6>
+                  <p class="fw-light small-text mb-0">En este momento </p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item py-3">
+                <div class="preview-thumbnail">
+                  <i class="mdi mdi-settings m-auto text-primary"></i>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject fw-normal text-dark mb-1">Ajustes</h6>
+                  <p class="fw-light small-text mb-0"> Mensaje privado </p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item py-3">
+                <div class="preview-thumbnail">
+                  <i class="mdi mdi-airballoon m-auto text-primary"></i>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject fw-normal text-dark mb-1">Registro de nuevo usuario</h6>
+                  <p class="fw-light small-text mb-0"> hace 2 días </p>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item dropdown"> 
+            <a class="nav-link count-indicator" id="countDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="icon-bell"></i>
+              <span class="count"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="countDropdown">
+              <a class="dropdown-item py-3">
+                <p class="mb-0 font-weight-medium float-left">Tienes 7 correos sin leer </p>
+                <span class="badge badge-pill badge-primary float-right">Ver todo</span>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <img src="dashboard/template/images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
+                </div>
+                <div class="preview-item-content flex-grow py-2">
+                  <p class="preview-subject ellipsis font-weight-medium text-dark">Marian Garner </p>
+                  <p class="fw-light small-text mb-0"> La reunion esta cancelada </p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <img src="dashboard/template/images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
+                </div>
+                <div class="preview-item-content flex-grow py-2">
+                  <p class="preview-subject ellipsis font-weight-medium text-dark">David Grey </p>
+                  <p class="fw-light small-text mb-0"> La reunion esta cancelada </p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <img src="dashboard/template/images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
+                </div>
+                <div class="preview-item-content flex-grow py-2">
+                  <p class="preview-subject ellipsis font-weight-medium text-dark">Travis Jenkins </p>
+                  <p class="fw-light small-text mb-0"> La reunion esta cancelada </p>
+                </div>
+              </a>
+            </div>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-bs-toggle="offcanvas">
+          <span class="mdi mdi-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_settings-panel.html -->
+      <div class="theme-setting-wrapper">
+        <div id="settings-trigger"><i class="ti-settings"></i></div>
+        <div id="theme-settings" class="settings-panel">
+          <i class="settings-close ti-close"></i>
+          <p class="settings-heading">Colores del Sidebar</p>
+          <div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border me-3"></div>Luz</div>
+          <div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border me-3"></div>Oscuro</div>
+          <p class="settings-heading mt-2">Colores del Encabezado</p>
+          <div class="color-tiles mx-0 px-4">
+            <div class="tiles success"></div>
+            <div class="tiles warning"></div>
+            <div class="tiles danger"></div>
+            <div class="tiles info"></div>
+            <div class="tiles dark"></div>
+            <div class="tiles default"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- partial -->
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar" >
+        <div class="sidebar p-3">
+          <div class="text-center mb-4">
+            <img src="https://s3-sa-east-1.amazonaws.com/doctoralia.co/doctor/058782/05878276523ba2130b14ac9970c483b8_large.jpg" width="180px" alt="Logo" class="rounded-circle mb-4 mt-3" style="
+            height: 180px;
+            -webkit-box-shadow: 0px 0px 22px 3px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 0px 22px 3px rgba(0,0,0,0.75);
+            box-shadow: 0px 0px 22px 3px rgba(0,0,0,0.75);">
+            <h4 class="h4">Juan Hernandez</h4>
+            <small>Médico Especialista En Cirugía General</small>
+          </div>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard.html">
+                <i class="mdi mdi-grid-large menu-icon"></i>
+                <span class="menu-title">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link"  id="overviewDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="dashboard.html">
+                <i class="fas fa-home"></i>&nbsp;&nbsp;&nbsp;Inicio
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="paymentsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-user-doctor"></i>&nbsp;&nbsp;&nbsp;Personal
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="paymentsDropdown">
+                <li><a class="dropdown-item" href="personal.html">Registrar nuevo</a></li>
+                <li><a class="dropdown-item" href="#">Médico</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="patientsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-hospital-user"></i>&nbsp;&nbsp;&nbsp;Pacientes
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="patientsDropdown" >
+                <li><a class="dropdown-item" href="paciente.html">Nuevo Paciente</a></li>
+                <li><a class="dropdown-item" href="medicamentos.html">Receta Medica</a></li>
+                <li><a class="dropdown-item" href="Orden-Medica.html">Orden Medica</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="appointmentDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-user-doctor"></i>&nbsp;&nbsp;&nbsp;Programar Cita
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="appointmentDropdown">
+                <li><a class="dropdown-item" href="cita-medica.html">Nueva Cita</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-envelope"></i>&nbsp;&nbsp;&nbsp;Mensajes
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="messagesDropdown">
+                <li><a class="dropdown-item" href="#">Detalles del paciente</a></li>
+                <li><a class="dropdown-item" href="#">Historial de mensajes</a></li>
+                <li><a class="dropdown-item" href="#">Notificación</a></li>
+                <li><a class="dropdown-item" href="#">Generar reporte</a></li>
+                <li><a class="dropdown-item" href="#">Video y llamada de audio</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="logoutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;&nbsp;Cerrar sesión
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="logoutDropdown">
+                <li><a class="dropdown-item" href="login.html">Salir</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="home-tab">
+                <div class="d-sm-flex align-items-center justify-content-between border-bottom">
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active ps-0" id="home-tab" data-bs-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Descripción general</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#audiences" role="tab" aria-selected="false">Audiencias</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#demographics" role="tab" aria-selected="false">Demografia</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link border-0" id="more-tab" data-bs-toggle="tab" href="#more" role="tab" aria-selected="false">Más</a>
+                    </li>
+                  </ul>
+                  <div>
+                    <div class="btn-wrapper">
+                      <a href="#" class="btn btn-otline-dark align-items-center"><i class="icon-share"></i> Compartir</a>
+                      <a href="#" class="btn btn-otline-dark"><i class="icon-printer"></i> Imprimir</a>
+                      <a href="#" class="btn btn-primary text-white me-0"><i class="icon-download"></i> Exportar</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-content tab-content-basic">
+                  <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview">
+                    <div class="row">
+                      <div class="col-lg-8 d-flex flex-column">
+                        <div class="row flex-grow">
+                          <div class="col-12 col-lg-4 col-lg-12 grid-margin stretch-card">
+                            <div class="card card-rounded">
+                              <div class="card-body">
+                                <div class="d-sm-flex justify-content-between align-items-start">
+                                  <div>
+                                   <h4 class="card-title card-title-dash">Pacientes</h4>
+                                   <h5 class="card-subtitle card-subtitle-dash">Grafico del flujo de pacientes.</h5>
+                                  </div>
+                                  <div id="performance-line-legend"></div>
+                                </div>
+                                <div class="chartjs-wrapper mt-5">
+                                  <canvas id="performaneLine"></canvas>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 d-flex flex-column">
+                        <div class="row flex-grow">
+                          <div class="col-md-6 col-lg-12 grid-margin stretch-card">
+                            <div class="card bg-primary card-rounded">
+                              <div class="card-body pb-0">
+                                <h4 class="card-title card-title-dash text-white mb-4">Resumen de estado</h4>
+                                <div class="row">
+                                  <div class="col-sm-4">
+                                    <p class="status-summary-ight-white mb-1">Puntos Positivos</p>
+                                    <h2 class="text-info">357</h2>
+                                  </div>
+                                  <div class="col-sm-8">
+                                    <div class="status-summary-chart-wrapper pb-4">
+                                      <canvas id="status-summary"></canvas>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6 col-lg-12 grid-margin stretch-card">
+                            <div class="card card-rounded">
+                              <div class="card-body">
+                                <div class="row">
+                                  <div class="col-sm-6">
+                                    <div class="d-flex justify-content-between align-items-center mb-2 mb-sm-0">
+                                      <div class="circle-progress-width">
+                                        <div id="totalVisitors" class="progressbar-js-circle pr-2"></div>
+                                      </div>
+                                      <div>
+                                        <p class="text-small mb-2">Total Citas</p>
+                                        <h4 class="mb-0 fw-bold">26.80%</h4>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-6">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                      <div class="circle-progress-width">
+                                        <div id="visitperday" class="progressbar-js-circle pr-2"></div>
+                                      </div>
+                                      <div>
+                                        <p class="text-small mb-2">Citas por Dia</p>
+                                        <h4 class="mb-0 fw-bold">15</h4>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-8 d-flex flex-column">
+                        <div class="row flex-grow">
+                          <div class="col-12 grid-margin stretch-card">
+                            <div class="card card-rounded">
+                              <div class="card-body">
+                                <div class="d-sm-flex justify-content-between align-items-start">
+                                  <div>
+                                    <h4 class="card-title card-title-dash">Finanzas</h4>
+                                   <p class="card-subtitle card-subtitle-dash">Entradas personales ( Dinero )</p>
+                                  </div>
+                                  <div>
+                                    <div class="dropdown">
+                                      <button class="btn btn-secondary dropdown-toggle toggle-dark btn-lg mb-0 me-0" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Este mes </button>
+                                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                        <h6 class="dropdown-header">Ajustes</h6>
+                                        <a class="dropdown-item" href="#">Esta semana</a>
+                                        <a class="dropdown-item" href="#">Este año</a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="d-sm-flex align-items-center mt-1 justify-content-between">
+                                  <div class="d-sm-flex align-items-center mt-4 justify-content-between"><h2 class="me-2 fw-bold">$5.467.000</h2><h4 class="me-2">COP</h4><h4 class="text-success">(+1.37%)</h4></div>
+                                  <div class="me-3"><div id="marketing-overview-legend"></div></div>
+                                </div>
+                                <div class="chartjs-bar-wrapper mt-3">
+                                  <canvas id="marketingOverview"></canvas>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row flex-grow">
+                          <div class="col-12 grid-margin stretch-card">
+                            <div class="card card-rounded table-darkBGImg">
+                              <div class="card-body">
+                                <div class="col-sm-8">
+                                  <h3 class="text-white upgrade-info mb-0">
+                                    Sección de <span class="fw-bold">Análisis</span> de datos personales
+                                  </h3>
+                                  <a href="#" class="btn btn-info upgrade-btn">Ingresar</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row flex-grow">
+                          <div class="col-12 grid-margin stretch-card">
+                            <div class="card card-rounded">
+                              <div class="card-body">
+                                <div class="d-sm-flex justify-content-between align-items-start">
+                                  <div>
+                                    <h4 class="card-title card-title-dash">Solicitudes Pendientes</h4>
+                                   <p class="card-subtitle card-subtitle-dash">Tienes más de 50 solicitudes nuevas</p>
+                                  </div>
+                                  <div>
+                                    <button class="btn btn-primary btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-account-plus"></i>Añadir nuevo miembro</button>
+                                  </div>
+                                </div>
+                                <div class="table-responsive  mt-1">
+                                  <table class="table select-table">
+                                    <thead>
+                                      <tr>
+                                        <th>
+                                          <div class="form-check form-check-flat mt-0">
+                                            <label class="form-check-label">
+                                              <input type="checkbox" class="form-check-input" aria-checked="false"><i class="input-helper"></i></label>
+                                          </div>
+                                        </th>
+                                        <th>Paciente</th>
+                                        <th>Nacionalidad</th>
+                                        <th>Progreso</th>
+                                        <th>Estado</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>
+                                          <div class="form-check form-check-flat mt-0">
+                                            <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" aria-checked="false"><i class="input-helper"></i></label>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="d-flex ">
+                                            <img src="https://s3-sa-east-1.amazonaws.com/doctoralia.co/doctor/14b6d8/14b6d86b825c91ff2f27a771523833a6_large.jpg" alt="">
+                                            <div>
+                                              <h6>Adrian Saenz</h6>
+                                              <p>Administrador de Empresas</p>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <h6>Medellin</h6>
+                                          <p>Colombia</p>
+                                        </td>
+                                        <td>
+                                          <div>
+                                            <div class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
+                                              <p class="text-success">79%</p>
+                                              <p>85/162</p>
+                                            </div>
+                                            <div class="progress progress-md">
+                                              <div class="progress-bar bg-success" role="progressbar" style="width: 85%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td><div class="badge badge-opacity-warning">En curso</div></td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <div class="form-check form-check-flat mt-0">
+                                            <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" aria-checked="false"><i class="input-helper"></i></label>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="d-flex">
+                                            <img src="https://s3-sa-east-1.amazonaws.com/doctoralia.co/doctor/0e2e19/0e2e19ae42a44115d5533b974b7678c4_large.jpg" alt="">
+                                            <div>
+                                              <h6>Laura Gomez</h6>
+                                              <p>Enfermera</p>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <h6>Bogotá</h6>
+                                          <p>Colombia</p>
+                                        </td>
+                                        <td>
+                                          <div>
+                                            <div class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
+                                              <p class="text-success">65%</p>
+                                              <p>85/162</p>
+                                            </div>
+                                            <div class="progress progress-md">
+                                              <div class="progress-bar bg-success" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td><div class="badge badge-opacity-warning">En curso</div></td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <div class="form-check form-check-flat mt-0">
+                                            <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" aria-checked="false"><i class="input-helper"></i></label>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="d-flex">
+                                            <img src="https://s3-sa-east-1.amazonaws.com/doctoralia.co/doctor/1e129d/1e129dfb5b1f464d3942e078ea4d7a68_large.jpg" alt="">
+                                            <div>
+                                              <h6>Felipe Char</h6>
+                                              <p>Abogado</p>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <h6>Barranquilla</h6>
+                                          <p>Colombia</p>
+                                        </td>
+                                        <td>
+                                          <div>
+                                            <div class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
+                                              <p class="text-success">65%</p>
+                                              <p>85/162</p>
+                                            </div>
+                                            <div class="progress progress-md">
+                                              <div class="progress-bar bg-warning" role="progressbar" style="width: 38%" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td><div class="badge badge-opacity-warning">En curso</div></td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <div class="form-check form-check-flat mt-0">
+                                            <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" aria-checked="false"><i class="input-helper"></i></label>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="d-flex">
+                                            <img src="https://s3-sa-east-1.amazonaws.com/doctoralia.co/doctor/1d1323/1d13236f137e3769a39e7355bc3f82d2_large.jpg" alt="">
+                                            <div>
+                                              <h6>Mario Casas</h6>
+                                              <p>Ing. Sistemas</p>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <h6>Cartagena</h6>
+                                          <p>Colombia</p>
+                                        </td>
+                                        <td>
+                                          <div>
+                                            <div class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
+                                              <p class="text-success">65%</p>
+                                              <p>85/162</p>
+                                            </div>
+                                            <div class="progress progress-md">
+                                              <div class="progress-bar bg-danger" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td><div class="badge badge-opacity-danger">Pendiente</div></td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <div class="form-check form-check-flat mt-0">
+                                            <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" aria-checked="false"><i class="input-helper"></i></label>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="d-flex">
+                                            <img src="https://s3-sa-east-1.amazonaws.com/doctoralia.co/doctor/251e8b/251e8baa2b4bbefc6cb9a8d9bcba8511_large.jpg" alt="">
+                                            <div>
+                                              <h6>Margareth Lopez</h6>
+                                              <p>Octometra</p>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <h6>Sincelejo</h6>
+                                          <p>Colombia</p>
+                                        </td>
+                                        <td>
+                                          <div>
+                                            <div class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
+                                              <p class="text-success">65%</p>
+                                              <p>85/162</p>
+                                            </div>
+                                            <div class="progress progress-md">
+                                              <div class="progress-bar bg-success" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td><div class="badge badge-opacity-success">Completado</div></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row flex-grow">
+                          <div class="col-md-6 col-lg-6 grid-margin stretch-card">
+                            <div class="card card-rounded">
+                              <div class="card-body card-rounded">
+                                <h4 class="card-title  card-title-dash">Eventos Recientes</h4>
+                                <div class="list align-items-center border-bottom py-2">
+                                  <div class="wrapper w-100">
+                                    <p class="mb-2 font-weight-medium">
+                                      Cambio de directores
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                      <div class="d-flex align-items-center">
+                                        <i class="mdi mdi-calendar text-muted me-1"></i>
+                                        <p class="mb-0 text-small text-muted">Marzo 14, 2022</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="list align-items-center border-bottom py-2">
+                                  <div class="wrapper w-100">
+                                    <p class="mb-2 font-weight-medium">
+                                      Otros Eventos
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                      <div class="d-flex align-items-center">
+                                        <i class="mdi mdi-calendar text-muted me-1"></i>
+                                        <p class="mb-0 text-small text-muted">Abril 19, 2023</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="list align-items-center border-bottom py-2">
+                                  <div class="wrapper w-100">
+                                    <p class="mb-2 font-weight-medium">
+                                      Informe trimestral
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                      <div class="d-flex align-items-center">
+                                        <i class="mdi mdi-calendar text-muted me-1"></i>
+                                        <p class="mb-0 text-small text-muted">Febrero 3, 2024</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="list align-items-center border-bottom py-2">
+                                  <div class="wrapper w-100">
+                                    <p class="mb-2 font-weight-medium">
+                                      Nuevos Horarios
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                      <div class="d-flex align-items-center">
+                                        <i class="mdi mdi-calendar text-muted me-1"></i>
+                                        <p class="mb-0 text-small text-muted">Junio 10, 2024</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                
+                                <div class="list align-items-center pt-3">
+                                  <div class="wrapper w-100">
+                                    <p class="mb-0">
+                                      <a href="#" class="fw-bold text-primary">Mostrar todo <i class="mdi mdi-arrow-right ms-2"></i></a>
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6 col-lg-6 grid-margin stretch-card">
+                            <div class="card card-rounded">
+                              <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                  <h4 class="card-title card-title-dash">Actividades</h4>
+                                  <p class="mb-0">20 terminados, quedan 5</p>
+                                </div>
+                                <ul class="bullet-line-list">
+                                  <li>
+                                    <div class="d-flex justify-content-between">
+                                      <div><span class="text-light-green">Martin Sierra</span>&nbsp;asignó una tarea</div>
+                                      <p>Justo ahora</p>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="d-flex justify-content-between">
+                                      <div><span class="text-light-green">Juan Martinez</span>&nbsp;asignó una tarea</div>
+                                      <p>1h</p>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="d-flex justify-content-between">
+                                      <div><span class="text-light-green">Maria Silva</span>&nbsp;asignó una tarea</div>
+                                      <p>3h</p>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="d-flex justify-content-between">
+                                      <div><span class="text-light-green">Leonardo Benitez</span>&nbsp;asignó una tarea</div>
+                                      <p>4h</p>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="d-flex justify-content-between">
+                                      <div><span class="text-light-green">Andres Giraldo</span>&nbsp;asignó una tarea</div>
+                                      <p>7h</p>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="d-flex justify-content-between">
+                                      <div><span class="text-light-green">Sofia Salcedo</span>&nbsp;asignó una tarea</div>
+                                      <p>8h</p>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="d-flex justify-content-between">
+                                      <div><span class="text-light-green">Luis Torres</span>&nbsp;asignó una tarea</div>
+                                      <p>10h</p>
+                                    </div>
+                                  </li>
+                                </ul>
+                                <div class="list align-items-center pt-3">
+                                  <div class="wrapper w-100">
+                                    <p class="mb-0">
+                                      <a href="#" class="fw-bold text-primary">Mostrar todo <i class="mdi mdi-arrow-right ms-2"></i></a>
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 d-flex flex-column">
+                        <div class="row flex-grow">
+                          <div class="col-12 grid-margin stretch-card">
+                            <div class="card card-rounded">
+                              <div class="card-body">
+                                <div class="row">
+                                  <div class="col-lg-12">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                      <h4 class="card-title card-title-dash">Lista de tareas</h4>
+                                      <div class="add-items d-flex mb-0">
+                                        <!-- <input type="text" class="form-control todo-list-input" placeholder="What do you need to do today?"> -->
+                                        <button class="add btn btn-icons btn-rounded btn-primary todo-list-add-btn text-white me-0 pl-12p"><i class="mdi mdi-plus"></i></button>
+                                      </div>
+                                    </div>
+                                    <div class="list-wrapper">
+                                      <ul class="todo-list todo-list-rounded">
+                                        <li class="d-block">
+                                          <div class="form-check w-100">
+                                            <label class="form-check-label">
+                                              <input class="checkbox" type="checkbox"> Reunion de Doctores de la Costa <i class="input-helper rounded"></i>
+                                            </label>
+                                            <div class="d-flex mt-2">
+                                              <div class="ps-4 text-small me-3">27 June 2024</div>
+                                              <div class="badge badge-opacity-warning me-3">Para mañana</div>
+                                              <i class="mdi mdi-flag ms-2 flag-color"></i>
+                                            </div>
+                                          </div>
+                                        </li>
+                                        <li class="d-block">
+                                          <div class="form-check w-100">
+                                            <label class="form-check-label">
+                                              <input class="checkbox" type="checkbox"> Enviar inventario semanal <i class="input-helper rounded"></i>
+                                            </label>
+                                            <div class="d-flex mt-2">
+                                              <div class="ps-4 text-small me-3">26 Junio 2024</div>
+                                              <div class="badge badge-opacity-success me-3">Hecho</div>
+                                            </div>
+                                          </div>
+                                        </li>
+                                        <li>
+                                          <div class="form-check w-100">
+                                            <label class="form-check-label">
+                                              <input class="checkbox" type="checkbox"> Actualizar correos de pacientes especiales <i class="input-helper rounded"></i>
+                                            </label>
+                                            <div class="d-flex mt-2">
+                                              <div class="ps-4 text-small me-3">26 Junio 2024</div>
+                                              <div class="badge badge-opacity-success me-3">Hecho</div>
+                                            </div>
+                                          </div>
+                                        </li>
+                                        <li class="border-bottom-0">
+                                          <div class="form-check w-100">
+                                            <label class="form-check-label">
+                                              <input class="checkbox" type="checkbox"> Cita con el Dr.Emilio Rodriguez <i class="input-helper rounded"></i>
+                                            </label>
+                                            <div class="d-flex mt-2">
+                                              <div class="ps-4 text-small me-3">25 Junio 2024</div>
+                                              <div class="badge badge-opacity-danger me-3">Caducado</div>
+                                            </div>
+                                          </div>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row flex-grow">
+                          <div class="col-12 grid-margin stretch-card">
+                            <div class="card card-rounded">
+                              <div class="card-body">
+                                <div class="row">
+                                  <div class="col-lg-12">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                      <h4 class="card-title card-title-dash">Ver Montos Institucionales</h4>
+                                    </div>
+                                    <canvas class="my-auto" id="doughnutChart" height="200"></canvas>
+                                    <div id="doughnut-chart-legend" class="mt-5 text-center"></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row flex-grow">
+                          <div class="col-12 grid-margin stretch-card">
+                            <div class="card card-rounded">
+                              <div class="card-body">
+                                <div class="row">
+                                  <div class="col-lg-12">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                      <div>
+                                        <h4 class="card-title card-title-dash">Informe de salida</h4>
+                                      </div>
+                                      <div>
+                                        <div class="dropdown">
+                                          <button class="btn btn-secondary dropdown-toggle toggle-dark btn-lg mb-0 me-0" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Mes sabio </button>
+                                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+                                            <h6 class="dropdown-header">Semana sabia</h6>
+                                            <a class="dropdown-item" href="#">Año sabio</a>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="mt-3">
+                                      <canvas id="leaveReport"></canvas>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row flex-grow">
+                          <div class="col-12 grid-margin stretch-card">
+                            <div class="card card-rounded">
+                              <div class="card-body">
+                                <div class="row">
+                                  <div class="col-lg-12">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                      <div>
+                                        <h4 class="card-title card-title-dash">clasificación Mejores Doctores</h4>
+                                      </div>
+                                    </div>
+                                    <div class="mt-3">
+                                      <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
+                                        <div class="d-flex">
+                                          <img class="img-sm rounded-10" src="https://s3-sa-east-1.amazonaws.com/doctoralia.co/doctor/0eec3e/0eec3e45d40bea4970d505af5948feb6_large.jpg" alt="profile">
+                                          <div class="wrapper ms-3">
+                                            <p class="ms-1 mb-1 fw-bold">Adolfo Hernandez</p>
+                                            <small class="text-muted mb-0">8757424</small>
+                                          </div>
+                                        </div>
+                                        <div class="text-muted text-small">
+                                          Puesto 1
+                                        </div>
+                                      </div>
+                                      <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
+                                        <div class="d-flex">
+                                          <img class="img-sm rounded-10" src="https://s3-sa-east-1.amazonaws.com/doctoralia.co/doctor/63039f/63039f8e4628739c14b088f8f730e9f8_large.jpg" alt="profile">
+                                          <div class="wrapper ms-3">
+                                            <p class="ms-1 mb-1 fw-bold">Maria Betancourt</p>
+                                            <small class="text-muted mb-0">335744</small>
+                                          </div>
+                                        </div>
+                                        <div class="text-muted text-small">
+                                          Puesto 2
+                                        </div>
+                                      </div>
+                                      <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
+                                        <div class="d-flex">
+                                          <img class="img-sm rounded-10" src="https://s3-sa-east-1.amazonaws.com/doctoralia.co/doctor/ac4cdb/ac4cdb304941af00e8bf9c90d6f734ad_large.jpg" alt="profile">
+                                          <div class="wrapper ms-3">
+                                            <p class="ms-1 mb-1 fw-bold">Samantha Caballero</p>
+                                            <small class="text-muted mb-0">198967</small>
+                                          </div>
+                                        </div>
+                                        <div class="text-muted text-small">
+                                          Puesto 3
+                                        </div>
+                                      </div>
+                                      <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
+                                        <div class="d-flex">
+                                          <img class="img-sm rounded-10" src="https://s3-sa-east-1.amazonaws.com/doctoralia.co/doctor/724a00/724a0080247bb5c7ec4196a355da328b_large.jpg" alt="profile">
+                                          <div class="wrapper ms-3">
+                                            <p class="ms-1 mb-1 fw-bold">Antonio Velilla</p>
+                                            <small class="text-muted mb-0">457867</small>
+                                          </div>
+                                        </div>
+                                        <div class="text-muted text-small">
+                                          Puesto 4
+                                        </div>
+                                      </div>
+                                      <div class="wrapper d-flex align-items-center justify-content-between pt-2">
+                                        <div class="d-flex">
+                                          <img class="img-sm rounded-10" src="https://s3-sa-east-1.amazonaws.com/doctoralia.co/doctor/fafbd1/fafbd1a3cc95944a5d1ed596a0295403_large.jpg" alt="profile">
+                                          <div class="wrapper ms-3">
+                                            <p class="ms-1 mb-1 fw-bold">Rafael Savogal</p>
+                                            <small class="text-muted mb-0">499394</small>
+                                          </div>
+                                        </div>
+                                        <div class="text-muted text-small">
+                                          Puesto 5
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <footer class="footer">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024. Ing. Juan Hernandez - ADSO 2827621</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Dashboard Medico - Medipohds</span>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+    </div>
+  </div>
+  <!-- plugins:js -->
+  <script src="dashboard/template/vendors/js/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src="dashboard/template/vendors/chart.js/Chart.min.js"></script>
+  <script src="dashboard/template/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+  <script src="dashboard/template/vendors/progressbar.js/progressbar.min.js"></script>
+
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="dashboard/template/js/off-canvas.js"></script>
+  <script src="dashboard/template/js/hoverable-collapse.js"></script>
+  <script src="dashboard/template/js/template.js"></script>
+  <script src="dashboard/template/js/settings.js"></script>
+  <script src="dashboard/template/js/todolist.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="dashboard/template/js/dashboard.js"></script>
+  <script src="dashboard/template/js/Chart.roundedBarCharts.js"></script>
+  <!-- End custom js for this page-->
+</body>
+
+</html>
+

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Medipohds - Personal</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="https://www.medipohds.com/wp-content/uploads/2021/07/favicon-150x150.png">
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="dashboard/template/vendors/feather/feather.css">
+  <link rel="stylesheet" href="dashboard/template/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="dashboard/template/vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="dashboard/template/vendors/typicons/typicons.css">
+  <link rel="stylesheet" href="dashboard/template/vendors/simple-line-icons/css/simple-line-icons.css">
+  <link rel="stylesheet" href="dashboard/template/vendors/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="dashboard/template/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+  <link rel="stylesheet" href="dashboard/template/js/select.dataTables.min.css">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="dashboard/template/css/vertical-layout-light/style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container-scroller"> 
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+        <a href="dashboard.html">
+          <img src="https://www.medipohds.com/wp-content/uploads/2021/07/logo.png" width="160px">
+        </a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-top"> 
+        <ul class="navbar-nav">
+          <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
+            <h1 class="welcome-text">Bienvenido, <span class="text-black fw-bold">Dr. Juan Hernandez</span></h1>
+            <h3 class="welcome-sub-text">Su resumen de actividad esta semana</h3>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <form class="search-form" action="#">
+              <i class="icon-search"></i>
+              <input type="search" class="form-control" placeholder="Busca aquí" title="Busca aquí">
+            </form>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link count-indicator" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
+              <i class="icon-mail icon-lg"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="notificationDropdown">
+              <a class="dropdown-item py-3 border-bottom">
+                <p class="mb-0 font-weight-medium float-left">Tienes 4 notificaciones nuevas </p>
+                <span class="badge badge-pill badge-primary float-right">Ver todo</span>
+              </a>
+              <a class="dropdown-item preview-item py-3">
+                <div class="preview-thumbnail">
+                  <i class="mdi mdi-alert m-auto text-primary"></i>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject fw-normal text-dark mb-1">Error de la aplicación</h6>
+                  <p class="fw-light small-text mb-0">En este momento </p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item py-3">
+                <div class="preview-thumbnail">
+                  <i class="mdi mdi-settings m-auto text-primary"></i>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject fw-normal text-dark mb-1">Ajustes</h6>
+                  <p class="fw-light small-text mb-0"> Mensaje privado </p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item py-3">
+                <div class="preview-thumbnail">
+                  <i class="mdi mdi-airballoon m-auto text-primary"></i>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject fw-normal text-dark mb-1">Registro de nuevo usuario</h6>
+                  <p class="fw-light small-text mb-0"> hace 2 días </p>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item dropdown"> 
+            <a class="nav-link count-indicator" id="countDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="icon-bell"></i>
+              <span class="count"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="countDropdown">
+              <a class="dropdown-item py-3">
+                <p class="mb-0 font-weight-medium float-left">Tienes 7 correos sin leer </p>
+                <span class="badge badge-pill badge-primary float-right">Ver todo</span>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <img src="dashboard/template/images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
+                </div>
+                <div class="preview-item-content flex-grow py-2">
+                  <p class="preview-subject ellipsis font-weight-medium text-dark">Marian Garner </p>
+                  <p class="fw-light small-text mb-0"> La reunion esta cancelada </p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <img src="dashboard/template/images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
+                </div>
+                <div class="preview-item-content flex-grow py-2">
+                  <p class="preview-subject ellipsis font-weight-medium text-dark">David Grey </p>
+                  <p class="fw-light small-text mb-0"> La reunion esta cancelada </p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <img src="dashboard/template/images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
+                </div>
+                <div class="preview-item-content flex-grow py-2">
+                  <p class="preview-subject ellipsis font-weight-medium text-dark">Travis Jenkins </p>
+                  <p class="fw-light small-text mb-0"> La reunion esta cancelada </p>
+                </div>
+              </a>
+            </div>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-bs-toggle="offcanvas">
+          <span class="mdi mdi-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_settings-panel.html -->
+      <div class="theme-setting-wrapper">
+        <div id="settings-trigger"><i class="ti-settings"></i></div>
+        <div id="theme-settings" class="settings-panel">
+          <i class="settings-close ti-close"></i>
+          <p class="settings-heading">Colores del Sidebar</p>
+          <div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border me-3"></div>Luz</div>
+          <div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border me-3"></div>Oscuro</div>
+          <p class="settings-heading mt-2">Pieles de Encabezado</p>
+          <div class="color-tiles mx-0 px-4">
+            <div class="tiles success"></div>
+            <div class="tiles warning"></div>
+            <div class="tiles danger"></div>
+            <div class="tiles info"></div>
+            <div class="tiles dark"></div>
+            <div class="tiles default"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- partial -->
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar" >
+        <div class="sidebar p-3">
+          <div class="text-center mb-4">
+            <img src="https://s3-sa-east-1.amazonaws.com/doctoralia.co/doctor/058782/05878276523ba2130b14ac9970c483b8_large.jpg" width="180px" alt="Logo" class="rounded-circle mb-4 mt-3" style="
+            height: 180px;
+            -webkit-box-shadow: 0px 0px 22px 3px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 0px 22px 3px rgba(0,0,0,0.75);
+            box-shadow: 0px 0px 22px 3px rgba(0,0,0,0.75);">
+            <h4>Juan Hernandez</h4>
+            <small>Médico Especialista En Cirugía General</small>
+          </div>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard.html">
+                <i class="mdi mdi-grid-large menu-icon"></i>
+                <span class="menu-title">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="overviewDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"  href="dashboard.html">
+                <i class="fas fa-home"></i>&nbsp;&nbsp;&nbsp;Inicio
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="overviewDropdown">
+                <li><a class="dropdown-item" href="dashboard.html">Tablero</a></li>
+                <li><a class="dropdown-item" href="#">Cita</a></li>
+                <li><a class="dropdown-item" href="#">Detalles de paciente</a></li>
+                <li><a class="dropdown-item" href="#">Línea de tiempo</a></li>
+                <li><a class="dropdown-item" href="#">Solicitudes</a></li>
+                <li><a class="dropdown-item" href="#">Online y Offline</a></li>
+                <li><a class="dropdown-item" href="#">Análisis</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="paymentsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-user-doctor"></i>&nbsp;&nbsp;&nbsp;Personal
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="paymentsDropdown">
+                <li><a class="dropdown-item" href="personal.html">Registrar nuevo</a></li>
+                <li><a class="dropdown-item" href="#">Médico</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="patientsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-hospital-user"></i>&nbsp;&nbsp;&nbsp;Pacientes
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="patientsDropdown" >
+                <li><a class="dropdown-item" href="paciente.html">Nuevo Paciente</a></li>
+                <li><a class="dropdown-item" href="medicamentos.html">Receta Medica</a></li>
+                <li><a class="dropdown-item" href="Orden-Medica.html">Orden Medica</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="appointmentDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-user-doctor"></i>&nbsp;&nbsp;&nbsp;Programar Cita
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="appointmentDropdown">
+                <li><a class="dropdown-item" href="cita-medica.html">Nueva Cita</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-envelope"></i>&nbsp;&nbsp;&nbsp;Mensajes
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="messagesDropdown">
+                <li><a class="dropdown-item" href="#">Detalles del paciente</a></li>
+                <li><a class="dropdown-item" href="#">Historial de mensajes</a></li>
+                <li><a class="dropdown-item" href="#">Notificación</a></li>
+                <li><a class="dropdown-item" href="#">Generar reporte</a></li>
+                <li><a class="dropdown-item" href="#">Video y llamada de audio</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="logoutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;&nbsp;Cerrar sesión
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="logoutDropdown">
+                <li><a class="dropdown-item" href="login.html">Salir</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="main-content p-3" style="width: 100%;">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>Nuevo Personal Medico</h1>
+            <input type="date" class="form-control w-auto" placeholder="20 de Junio 2024">
+        </div>
+        <div class="card card-custom border-0 p-3">
+          <form>
+            <!-- Nombres -->
+            <div class="row mb-3">
+              <div class="col">
+                <label for="primer-nombre" class="form-label">Primer nombre*</label>
+                <input type="text" class="form-control" id="primer-nombre" placeholder="Primer nombre" required="">
+              </div>
+              <div class="col">
+                <label for="segundo-nombre" class="form-label">Segundo nombre</label>
+                <input type="text" class="form-control" id="segundo-nombre" placeholder="Segundo nombre">
+              </div>
+            </div>
+    
+            <!-- Apellidos -->
+            <div class="row mb-3">
+              <div class="col">
+                <label for="primer-apellido" class="form-label">Primer apellido*</label>
+                <input type="text" class="form-control" id="primer-apellido" placeholder="Primer apellido" required="">
+              </div>
+              <div class="col">
+                <label for="segundo-apellido" class="form-label">Segundo apellido</label>
+                <input type="text" class="form-control" id="segundo-apellido" placeholder="Segundo apellido">
+              </div>
+            </div>
+    
+            <!-- Documentos -->
+            <div class="mb-3">
+              <label for="tipo-documento" class="form-label">Tipo de documento*</label>
+              <select class="form-select" id="tipo-documento" required="">
+                <option selected="" disabled="">- Seleccionar -</option>
+                <option value="CC">Cédula de Ciudadanía</option>
+                <option value="TI">Tarjeta de Identidad</option>
+                <option value="CE">Cédula de Extranjería</option>
+                <option value="PA">Pasaporte</option>
+              </select>
+            </div>
+    
+            <div class="mb-3">
+              <label for="numero-documento" class="form-label">No. de Documento*</label>
+              <input type="text" class="form-control" id="numero-documento" placeholder="Número de Documento" required="">
+            </div>
+    
+            <div class="mb-3">
+              <label for="numero-registro-medico" class="form-label">Número de Registro Médico</label>
+              <input type="text" class="form-control" id="numero-registro-medico" placeholder="Número de Registro Médico" required="">
+            </div>
+    
+            <!-- Especialidad -->
+            <div class="mb-3">
+              <label for="especialidad" class="form-label">Especialidad*</label>
+              <select class="form-select" id="especialidad" required="">
+                <option selected="" disabled="">- Seleccionar -</option>
+                <option value="Medicina General">Medicina General</option>
+                <option value="Cardiología">Cardiología</option>
+                <option value="Dermatología">Dermatología</option>
+                <option value="Ginecología">Ginecología</option>
+                <option value="Pediatría">Pediatría</option>
+                <option value="Psiquiatría">Psiquiatría</option>
+                <option value="Oftalmología">Oftalmología</option>
+                <option value="Neurología">Neurología</option>
+                <option value="Traumatología">Traumatología</option>
+                <!-- Agregar más especialidades según sea necesario -->
+              </select>
+            </div>
+    
+            <!-- Residencia -->
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="departamento" class="form-label">Departamento donde reside*</label>
+                <select class="form-select" id="departamento" required="">
+                  <option selected="" disabled="">- Seleccionar -</option>
+                  <option value="Antioquia">Antioquia</option>
+                  <option value="Bogotá">Bogotá</option>
+                  <option value="Cundinamarca">Cundinamarca</option>
+                  <!-- Agregar más opciones según sea necesario -->
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="ciudad" class="form-label">Ciudad donde reside*</label>
+                <input type="text" class="form-control" id="ciudad" placeholder="Ciudad" required="">
+              </div>
+            </div>
+    
+            <div class="mb-3">
+              <label for="direccion" class="form-label">Dirección donde reside*</label>
+              <input type="text" class="form-control" id="direccion" placeholder="Dirección" required="">
+            </div>
+    
+            <!-- Teléfonos -->
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input type="tel" class="form-control" id="telefono" placeholder="Teléfono">
+              </div>
+              <div class="col-md-6">
+                <label for="celular" class="form-label">Celular*</label>
+                <input type="tel" class="form-control" id="celular" placeholder="Celular" required="">
+              </div>
+            </div>
+    
+            <!-- Correos Electrónicos -->
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo Electrónico*</label>
+              <input type="email" class="form-control" id="email" placeholder="correo@ejemplo.com" required="">
+            </div>
+            <div class="mb-3">
+              <label for="confirmar-email" class="form-label">Confirmar Correo Electrónico*</label>
+              <input type="email" class="form-control" id="confirmar-email" placeholder="confirmar correo@ejemplo.com" required="">
+            </div>
+    
+            <!-- Sexo -->
+            <div class="mb-3">
+              <label for="sexo" class="form-label">Sexo*</label>
+              <select class="form-select" id="sexo" required="">
+                <option selected="" disabled="">- Seleccionar -</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Otro">Otro</option>
+              </select>
+            </div>
+    
+            <!-- Grupo Sanguíneo -->
+            <div class="mb-3">
+              <label for="grupo-sanguineo" class="form-label">Grupo Sanguíneo*</label>
+              <select class="form-select" id="grupo-sanguineo" required="">
+                <option selected="" disabled="">- Seleccionar -</option>
+                <option value="A+">A+</option>            
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+              </select>
+            </div>
+    
+            <!-- Adjuntar documento de identidad -->
+            <div class="mb-3">
+              <label for="documento-identidad" class="form-label">Adjuntar documento de identidad*</label>
+              <input class="form-control" type="file" id="documento-identidad" accept=".txt,.rtf,.pdf,.doc,.docx,.odt,.ppt,.pptx,.odp,.xls,.xlsx,.ods,.jpg" required="">
+              <div class="form-text">Máximo 1 fichero, límite de 25 MB, tipos permitidos: txt, rtf, pdf, doc, docx, odt, ppt, pptx, odp, xls, xlsx, ods, jpg.</div>
+            </div>
+    
+            <!-- Autorización de tratamientos de datos -->
+            <div class="mb-3 form-check" style="margin-left: 30px;">
+              <input type="checkbox" class="form-check-input" id="autorizacion-datos" required="">
+              <label class="form-check-label" for="autorizacion-datos">Acepto el tratamiento y la Política de Protección de Datos Personales Servicios</label>
+            </div>
+    
+            <!-- Botón de envío -->
+            <button type="submit" class="btn btn-primary">Registrar</button>
+          </form>
+        </div>
+        
+    </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+      <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024. Ing. Juan Hernandez - ADSO 2827621</span>
+      <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Dashboard Medico - Medipohds</span>
+    </div>
+  </footer>
+  <!-- plugins:js -->
+  <script src="dashboard/template/vendors/js/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src="dashboard/template/vendors/chart.js/Chart.min.js"></script>
+  <script src="dashboard/template/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+  <script src="dashboard/template/vendors/progressbar.js/progressbar.min.js"></script>
+
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="dashboard/template/js/off-canvas.js"></script>
+  <script src="dashboard/template/js/hoverable-collapse.js"></script>
+  <script src="dashboard/template/js/template.js"></script>
+  <script src="dashboard/template/js/settings.js"></script>
+  <script src="dashboard/template/js/todolist.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="dashboard/template/js/dashboard.js"></script>
+  <script src="dashboard/template/js/Chart.roundedBarCharts.js"></script>
+  <!-- End custom js for this page-->
+</body>
+
+</html>
+
